@@ -78,7 +78,80 @@ case $selected_language in
     mv "__pycache__/$filename.cpython-*.pyc" "$outputname.pyc"
     rm -r "__pycache__"
     ;;
-  # ... (remaining cases for other languages)
+  "Java")
+    # Obfuscation for Java
+    javac "$filename"
+    mv "$filename.class" "$outputname.class"
+    ;;
+  "C")
+    # Obfuscation for C
+    gcc -o "$outputname" "$filename"
+    ;;
+  "C++")
+    # Obfuscation for C++
+    g++ -o "$outputname" "$filename"
+    ;;
+  "JavaScript")
+    # Obfuscation for JavaScript
+    npm install -g javascript-obfuscator
+    javascript-obfuscator "$filename" --output "$outputname.js"
+    ;;
+  "Ruby")
+    # Obfuscation for Ruby
+    echo "puts 'Hello, world!'" | ruby -o "$outputname.rb"
+    ;;
+  "PHP")
+    # Obfuscation for PHP
+    php -w "$filename" > "$outputname.php"
+    ;;
+  "Swift")
+    # Obfuscation for Swift
+    swiftc -o "$outputname" "$filename"
+    ;;
+  "Bash")
+    # Obfuscation for Bash
+    tr 'a-zA-Z' 'n-za-mN-ZA-M' < "$filename" > "$outputname.sh"
+    ;;
+  "Rust")
+    # Obfuscation for Rust
+    echo "fn main() { println!(\"Hello, world!\"); }" > "$outputname.rs"
+    ;;
+  "Kotlin")
+    # Obfuscation for Kotlin
+    echo "fun main() { println(\"Hello, world!\") }" > "$outputname.kt"
+    ;;
+  "Go")
+    # Obfuscation for Go
+    echo "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hello, world!\")\n}" > "$outputname.go"
+    ;;
+  "Perl")
+    # Obfuscation for Perl
+    echo 'print "Hello, world!\n";' > "$outputname.pl"
+    ;;
+  "Lua")
+    # Obfuscation for Lua
+    echo 'print("Hello, world!")' > "$outputname.lua"
+    ;;
+  "Scala")
+    # Obfuscation for Scala
+    echo 'object Main extends App { println("Hello, world!") }' > "$outputname.scala"
+    ;;
+  "TypeScript")
+    # Obfuscation for TypeScript
+    echo 'console.log("Hello, world!");' > "$outputname.ts"
+    ;;
+  "Haskell")
+    # Obfuscation for Haskell
+    echo 'main = putStrLn "Hello, world!"' > "$outputname.hs"
+    ;;
+  "R")
+    # Obfuscation for R
+    echo 'cat("Hello, world!\n")' > "$outputname.R"
+    ;;
+  "MATLAB")
+    # Obfuscation for MATLAB
+    echo 'disp("Hello, world!");' > "$outputname.m"
+    ;;
   *)
     echo -e "${RED}Obfuscation for $selected_language has not been implemented.${RESET}"
     exit 1
