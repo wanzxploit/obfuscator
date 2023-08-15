@@ -37,7 +37,7 @@ Make sure you have the following dependencies installed on your system:
 
 1. Copy this repository to your device.
 2. Open a terminal and navigate to the directory containing the script.
-3. Run the script with the command: `./obfuscator.sh`
+3. Run the script with the command: `bash obfuscator.sh`
 
 Follow the on-screen instructions to select the programming language and provide the required file names. The script will perform obfuscation based on the chosen language and create the obfuscated output file.
 
@@ -63,13 +63,32 @@ If you're using Termux on an Android device, here are the installation steps:
    ```
 5. Run the script:
    ```bash
-   ./obfuscator.sh
+   bash obfuscator.sh
    ```
 
 #### In Linux
 
 - Open a terminal and navigate to the directory containing the script.
-- Run the script with the command: `./obfuscator.sh`
+1. Open the Terminal.
+2. Run the following command to install the required tools:
+   ```bash
+   sudo apt update && pkg upgrade
+   sudo apt install git python npm ruby clang
+   npm install -g javascript-obfuscator
+   gem install bundler
+   ```
+3. Copy this repository by running the command:
+   ```bash
+   git clone https://github.com/wanzxploit/obfuscator.git
+   ```
+4. Navigate to the repository directory:
+   ```bash
+   cd obfuscator
+   ```
+5. Run the script:
+   ```bash
+   bash obfuscator.sh
+   ```
 
 ## Supported Programming Languages
 
