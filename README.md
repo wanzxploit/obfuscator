@@ -95,7 +95,6 @@ This tool currently supports obfuscation for the following programming languages
 - Haskell
 - R
 - MATLAB
-- (and more...)
 
 ## Contributing
 
